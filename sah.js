@@ -1,3 +1,4 @@
+//
 function board(){
     const rand = document.createElement("tr")
     var lit = 'a'

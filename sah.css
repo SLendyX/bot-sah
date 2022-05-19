@@ -1,5 +1,5 @@
 .chess-board { border-spacing: 0; border-collapse: collapse; width: 500px; height: 300px }
-.chess-board th { padding: 2em; font-size: 1.15em; }
+.chess-board th {  padding: 2em; font-size: 1.15em; }
 .chess-board td { border: 1px solid; width: 2em; height: 2em; }
 .chess-board th + th { border-bottom: 1px solid #000; }
         .chess-board th:first-child,
