@@ -9,7 +9,24 @@
         .chess-board td { width: 1.5em; height: 1.5em; text-align: center; font-size: 32px; line-height: 0;}
 .chess-board .light { background: rgb(255, 255, 255); }
 .chess-board .dark { background: rgb(105, 162, 101); }
+
 .center {
   margin-left: auto;
   margin-right: auto;
 }
+
+.piece{width:100%;height:100%;position:relative;font-size:5vmin;z-index:1;}
+.kb{color:black;text-shadow: 0 0 10px white;}.kb:after{content:"♚";}
+.kw{color:white;text-shadow: 0 0 10px black;}.kw:after{content:"♔";}
+.qb{color:black;text-shadow: 0 0 10px white;}.qb:after{content:"♛";}
+.qw{color:white;text-shadow: 0 0 10px black;}.qw:after{content:"♕";}
+.rb{color:black;text-shadow: 0 0 10px white;}.rb:after{content:"♜";}
+.rw{color:white;text-shadow: 0 0 10px black;}.rw:after{content:"♖";}
+.nb{color:black;text-shadow: 0 0 10px white;}.nb:after{content:"♞";}
+.nw{color:white;text-shadow: 0 0 10px black;}.nw:after{content:"♘";}
+.bb{color:black;text-shadow: 0 0 10px white;}.bb:after{content:"♝";}
+.bw{color:white;text-shadow: 0 0 10px black;}.bw:after{content:"♗";}
+.pb{color:black;text-shadow: 0 0 10px white;}.pb:after{content:"♟";}
+.pw{color:white;text-shadow: 0 0 10px black;}.pw:after{content:"♙";}
+
+.hovered{box-shadow: inset 0 0 10px 1px yellow;}
