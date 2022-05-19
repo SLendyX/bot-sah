@@ -1,0 +1,15 @@
+.chess-board { border-spacing: 0; border-collapse: collapse; width: 500px; height: 300px }
+.chess-board th { padding: 2em; font-size: 1.15em; }
+.chess-board td { border: 1px solid; width: 2em; height: 2em; }
+.chess-board th + th { border-bottom: 1px solid #000; }
+        .chess-board th:first-child,
+        .chess-board td:last-child { border-right: 1px solid #000; }
+        .chess-board tr:last-child td { border-bottom: 1px solid; }
+        .chess-board th:empty { border: none; }
+        .chess-board td { width: 1.5em; height: 1.5em; text-align: center; font-size: 32px; line-height: 0;}
+.chess-board .light { background: rgb(255, 255, 255); }
+.chess-board .dark { background: rgb(105, 162, 101); }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
