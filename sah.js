@@ -1,5 +1,5 @@
 //
-const fen = "RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqknr"
+const fen = "RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqkbnr"
 var tabla = [];
 for(var i=0; i<8; i++) {
     tabla[i] = [];
@@ -74,40 +74,47 @@ function fenmatrice(a){
     else 
         return 0
 }
-/*
-for(var i=0; i in fen; i++){
-    for(var j=0; j<8; j++)
-        for(var k=0; j<8; k++){
-            if(fen[i] >='1' && fen[i] <='9')
-                k+=(int)(fen[i])
-            else 
-                tabla[j][k] = fenmatrice(fen[i])
-        }
-}*/
 
-function cacat(){
-const rand = document.createElement("tr")
-for(var i=0; i<8; i++) {
-   for(var j=0; j<8; j++) {
-        const para = document.createElement("th")
-        rand.appendChild(para)
-        const node = document.createTextNode(tabla[i][j]);
-        para.appendChild(node);
-        const element = document.getElementById("board");
-        element.appendChild(para)
+
+
+function fenconverter(){
+    var k = 0, j= 0, n = fen.length;
+    for(var i=0; i <= n; ++i){
+            if(fen[i] == '/'){
+                k=0, j++
+            }
+            else if(fen[i] >='1' && fen[i] <='9'){
+                k+=parseInt(fen[i])
+            }
+            else {
+                tabla[j][k] = fenmatrice(fen[i])
+                k++
+            }
     }
 }
-}
+/*function functie(){
 
+    const rand = document.createElement("tr")
+    for(var i=0; i<8; i++) {
+        for(var j=0; j<8; j++) {
+            const para = document.createElement("th")
+            rand.appendChild(para)
+            const node = document.createTextNode(tabla[i][j]);
+            para.appendChild(node);
+            const element = document.getElementById("board");
+            element.appendChild(para)
+        }
+    }
+}
+*/
 function board(){
+    fenconverter()
     const rand = document.createElement("tr")
     var lit = 'a'
     for (var i = 0; i < 9; ++i){
         if(i==0){
             const para = document.createElement("th")
             rand.appendChild(para)
-            const node = document.createTextNode(" ");
-            para.appendChild(node);
             const element = document.getElementById("board");
             element.appendChild(para)
         }else{
@@ -132,20 +139,22 @@ function board(){
                 row.appendChild(para)
                 const element = document.getElementById("board");
                 element.appendChild(row)
-            }else if(i%2 != j%2){
+            }else if(i%2 == j%2){
                 para = document.createElement("td")
+                node = document.createTextNode(i*10+j-1)
+                para.appendChild(node)
                 para.classList.add("dark")
-                para.classList.add("rw")
+                para.classList.add("textcolor")
                 row.appendChild(para)
-                const element = document.getElementById("board");
-                element.appendChild(row)
             }else{
                 para = document.createElement("td")
                 para.classList.add("light")
                 row.appendChild(para)
-                const element = document.getElementById("board");
-                element.appendChild(row)
             }
+            if(tabla[7-i][j-1]!=0)
+                para.classList.add(fenpiese(tabla[7-i][j-1]))
+            const element = document.getElementById("board");
+            element.appendChild(row)
 
         }
     }
